@@ -1,0 +1,91 @@
+<html>
+
+<head>
+
+<script>
+
+function validateForm()
+{
+
+var name = document.forms["regForm"]["name"].value;
+var email = document.forms["regForm"]["email"].value;
+var password = document.forms["regForm"]["password"].value;
+var phone = document.forms["regForm"]["phone"].value;
+
+var namePattern = /^[A-Za-z]{6,}$/;
+var emailPattern = /^[a-zA-Z0-9._]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
+var phonePattern = /^[0-9]{10}$/;
+
+/* Name Validation */
+if(!namePattern.test(name))
+{
+alert("Name should contain only alphabets and minimum 6 characters");
+return false;
+}
+
+/* Password Validation */
+if(password.length < 6)
+{
+alert("Password should not be less than 6 characters");
+return false;
+}
+
+/* Email Validation */
+if(!emailPattern.test(email))
+{
+alert("Enter valid Email ID (example: name@domain.com)");
+return false;
+}
+
+/* Phone Validation */
+if(!phonePattern.test(phone))
+{
+alert("Phone number should contain exactly 10 digits");
+return false;
+}
+
+alert("Registration Successful");
+
+return true;
+
+}
+
+</script>
+
+</head>
+
+
+<body>
+
+<h2>Registration Form</h2>
+
+<form name="regForm" onsubmit="return validateForm()">
+
+Name:
+<input type="text" name="name"><br><br>
+
+Email:
+<input type="email" name="email"><br><br>
+
+Password:
+<input type="password" name="password"><br><br>
+
+Phone:
+<input type="text" name="phone"><br><br>
+
+Gender:
+<input type="radio" name="gender">Male
+<input type="radio" name="gender">Female<br><br>
+
+Address:
+<textarea rows="4" cols="30"></textarea><br><br>
+
+<input type="submit" value="Register">
+
+<input type="reset" value="Clear">
+
+</form>
+
+</body>
+
+</html>

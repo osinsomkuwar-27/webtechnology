@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background:whitesmoke;
+}
+header {
+    background: bisque;
+    color: #000000;
+    padding: 40px;
+    text-align: center;
+}
+nav {
+    background: rgb(255, 0, 140);
+    text-align: center;
+    padding: 10px;
+}
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+.section {
+    padding: 40px;
+    max-width: 900px;
+    margin: auto;
+}
+.project {
+    background: rgb(123, 198, 236);
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.skills-list {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+.skills-list li {
+    background: #0066ff;
+    color: white;
+    padding: 10px;
+}
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}

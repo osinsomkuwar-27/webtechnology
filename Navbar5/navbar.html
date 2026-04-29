@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Horizontal Navbar with Dropdown</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f4f4f4; }
+
+        .navbar { background: #222; }
+        .menu { display: flex; justify-content: center; }
+        .menu > div { position: relative; }
+        .menu > div > a {
+            display: block; padding: 15px 20px;
+            color: white; text-decoration: none;
+        }
+        .menu > div > a:hover { background: #00bcd4; }
+
+        .dropdown {
+            display: none; position: absolute; top: 100%; left: 0;
+            background: #339; min-width: 180px;
+        }
+        .dropdown a {
+            display: block; padding: 12px;
+            color: blue; text-decoration: none;
+        }
+        .dropdown a:hover { background: #00bcd4; }
+        .menu > div:hover .dropdown { display: block; }
+
+        .dropdown-item { position: relative; }
+        .sub-dropdown {
+            display: none; position: absolute;
+            left: 100%; top: 0;
+            background: #444; min-width: 180px;
+        }
+        .dropdown-item:hover .sub-dropdown { display: block; }
+
+        .container {
+            display: flex; max-width: 1200px;
+            margin: 30px auto; gap: 20px; padding: 0 20px;
+        }
+        .content, .sidebar {
+            background: white; padding: 20px;
+        }
+        .content { flex: 3; }
+        .sidebar { flex: 1; }
+
+        .footer {
+            background: #222; color: white;
+            text-align: center; padding: 15px; margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .menu, .container { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="menu">
+        <div><a href="#">Home</a></div>
+        <div>
+            <a href="#">Services</a>
+            <div class="dropdown">
+                <a href="#">Web Design</a>
+                <div class="dropdown-item">
+                    <a href="#">Development ▸</a>
+                    <div class="sub-dropdown">
+                        <a href="#">Frontend</a>
+                        <a href="#">Backend</a>
+                        <a href="#">Full Stack</a>
+                    </div>
+                </div>
+                <a href="#">SEO</a>
+            </div>
+        </div>
+        <div>
+            <a href="#">About</a>
+            <div class="dropdown">
+                <a href="#">Company</a>
+                <a href="#">Team</a>
+            </div>
+        </div>
+        <div><a href="#">Contact</a></div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+        <h2>Main Content</h2>
+        <p>This layout demonstrates a horizontal navbar with nested dropdown menus.</p>
+    </div>
+    <div class="sidebar">
+        <h3>Sidebar</h3>
+        <p>Sidebar content goes here.</p>
+    </div>
+</div>
+
+<div class="footer">
+    <p>© 2025 Your Website</p>
+</div>
+
+</body>
+</html>

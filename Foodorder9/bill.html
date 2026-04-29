@@ -1,0 +1,50 @@
+<html>
+
+<head>
+
+<script>
+
+function showBill()
+{
+
+var params = new URLSearchParams(window.location.search);
+var total = params.get("total");
+
+document.getElementById("bill").innerHTML = "Total Bill Amount = ₹ " + total;
+
+}
+
+</script>
+
+</head>
+
+<body onload="showBill()">
+
+<h2>Generated Bill</h2>
+
+<p id="bill"></p>
+
+<hr>
+
+<h2>Customer Feedback Form</h2>
+
+<form>
+
+Name:<br>
+<input type="text"><br><br>
+
+Rating:<br>
+<input type="radio" name="rating"> Excellent
+<input type="radio" name="rating"> Good
+<input type="radio" name="rating"> Average<br><br>
+
+Comments:<br>
+<textarea rows="4" cols="30"></textarea><br><br>
+
+<input type="submit" value="Submit Feedback">
+
+</form>
+
+</body>
+
+</html>

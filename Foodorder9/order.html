@@ -1,0 +1,71 @@
+<html>
+
+<head>
+
+<script>
+
+function generateBill()
+{
+
+var total = 0;
+
+/* Pizza Price = 200 */
+if(document.getElementById("pizza").checked)
+{
+var qty = document.getElementById("pizzaQty").value;
+total += 200 * qty;
+}
+
+/* Burger Price = 100 */
+if(document.getElementById("burger").checked)
+{
+var qty = document.getElementById("burgerQty").value;
+total += 100 * qty;
+}
+
+/* Sandwich Price = 80 */
+if(document.getElementById("sandwich").checked)
+{
+var qty = document.getElementById("sandQty").value;
+total += 80 * qty;
+}
+
+if(total == 0)
+{
+alert("Please select at least one item");
+return;
+}
+
+window.location.href = "bill.html?total=" + total;
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h2>Food Order Form</h2>
+
+<form>
+
+<input type="checkbox" id="pizza"> Pizza (₹200)
+Quantity:
+<input type="number" id="pizzaQty" value="1" min="1"><br><br>
+
+<input type="checkbox" id="burger"> Burger (₹100)
+Quantity:
+<input type="number" id="burgerQty" value="1" min="1"><br><br>
+
+<input type="checkbox" id="sandwich"> Sandwich (₹80)
+Quantity:
+<input type="number" id="sandQty" value="1" min="1"><br><br>
+
+<input type="button" value="Generate Bill" onclick="generateBill()">
+
+</form>
+
+</body>
+
+</html>
